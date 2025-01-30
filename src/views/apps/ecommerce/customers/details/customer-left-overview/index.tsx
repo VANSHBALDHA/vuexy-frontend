@@ -1,0 +1,25 @@
+// MUI Imports
+import Grid from '@mui/material/Grid'
+
+// Type Imports
+
+// Component Imports
+import type { Customer } from '@/types/apps/ecommerceTypes'
+
+import CustomerDetails from './CustomerDetails'
+import CustomerPlan from './CustomerPlan'
+
+const CustomerLeftOverview = ({ customerData }: { customerData?: Customer }) => {
+  return (
+    <Grid container spacing={6}>
+      <Grid item xs={12}>
+        <CustomerDetails customerData={customerData} />
+      </Grid>
+      <Grid item xs={12}>
+        <CustomerPlan />
+      </Grid>
+    </Grid>
+  )
+}
+
+export default CustomerLeftOverview
