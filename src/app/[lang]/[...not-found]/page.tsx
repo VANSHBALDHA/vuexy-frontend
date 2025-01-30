@@ -8,9 +8,14 @@ import { getSystemMode } from '@core/utils/serverHelpers'
 import BlankLayout from '@layouts/BlankLayout'
 import NotFound from '@views/NotFound'
 
-// Config Imports
-
-// Util Imports
+// Generate static params for all supported languages and catch-all not-found routes
+export function generateStaticParams() {
+  // Get all supported languages from i18n config
+  return Object.keys(i18n.langDirection).map((lang) => ({
+    lang,
+    'not-found': ['not-found']
+  }))
+}
 
 const NotFoundPage = ({ params }: { params: { lang: Locale } }) => {
   // Vars

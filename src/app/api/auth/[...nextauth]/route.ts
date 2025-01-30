@@ -4,6 +4,19 @@ import NextAuth from 'next-auth'
 // Lib Imports
 import { authOptions } from '@/libs/auth'
 
+export function generateStaticParams() {
+    // NextAuth uses these routes: signin, signout, error, verify-request, etc.
+    return [
+        { nextauth: ['signin'] },
+        { nextauth: ['signout'] },
+        { nextauth: ['error'] },
+        { nextauth: ['verify-request'] },
+        { nextauth: ['callback'] },
+        { nextauth: ['session'] },
+        { nextauth: ['csrf'] }
+    ]
+}
+
 /*
  * As we do not have backend server, the refresh token feature has not been incorporated into the template.
  * Please refer https://next-auth.js.org/tutorials/refresh-token-rotation link for a reference.

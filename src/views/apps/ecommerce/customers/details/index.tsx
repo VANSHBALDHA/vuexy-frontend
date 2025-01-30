@@ -16,7 +16,7 @@ import CustomerLeftOverview from './customer-left-overview'
 import CustomerRight from './customer-right'
 import CustomerDetailsHeader from './CustomerDetailsHeader'
 
-const OverViewTab = dynamic(() => import('@views/apps/ecommerce/customers/details/customer-right/overview'))
+// const OverViewTab = dynamic(() => import('@views/apps/ecommerce/customers/details/customer-right/overview'))
 const SecurityTab = dynamic(() => import('@views/apps/ecommerce/customers/details/customer-right/security'))
 const NotificationsTab = dynamic(() => import('@views/apps/ecommerce/customers/details/customer-right/notification'))
 
@@ -26,7 +26,6 @@ const AddressBillingTab = dynamic(
 
 // Vars
 const tabContentList = (): { [key: string]: ReactElement } => ({
-  overview: <OverViewTab />,
   security: <SecurityTab />,
   addressBilling: <AddressBillingTab />,
   notifications: <NotificationsTab />
